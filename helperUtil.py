@@ -38,14 +38,11 @@ def addImages(img1, img2):
 def regExclusion(img, channel):
     copiedImg = img.copy()
     if(channel == 'B'):
-        copiedImg[:,:,1] = 0
-        copiedImg[:,:,2] = 0
+        copiedImg[:,:,0] = 0
     if(channel == 'G'):
-        copiedImg[:,:,0] = 0
-        copiedImg[:,:,2] = 0
-    if(channel == 'R'):
-        copiedImg[:,:,0] = 0
         copiedImg[:,:,1] = 0
+    if(channel == 'R'):
+        copiedImg[:,:,2] = 0
     return copiedImg
 
 def convolve(img,filter):
